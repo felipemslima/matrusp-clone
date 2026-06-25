@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#FFA000">
+  <title>MatrUSP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header id="header">
+  <div id="header-content">
+    <div id="logo-wrapper">
+      <span id="logo">MatrUSP</span>
+      <span id="beta-tag">clone</span>
+    </div>
+    <div id="header-spacer"></div>
+    <div id="header-actions">
+      <button id="btn-export" title="Exportar grade (.json)">⬇ Exportar</button>
+      <button id="btn-import" title="Importar grade (.json)">⬆ Importar</button>
+      <button id="btn-clear"  title="Limpar grade">✕ Limpar</button>
+      <input id="import-input" type="file" accept=".json,application/json" style="display:none">
+    </div>
+  </div>
+  <div id="loading-bar" hidden></div>
+</header>
+
+<div id="main">
+
+  <!-- ── Timetable ── -->
+  <div id="lecture-schedule">
+    <div id="time-table-scroll">
+    <div id="time-table">
+
+      <div class="column time" id="col-time">
+        <div class="column-header"></div>
+        <div class="column-content-wrapper">
+          <div class="column-content" id="time-labels"></div>
+        </div>
+      </div>
+
+      <div class="column" id="col-0">
+        <div class="column-header">Segunda</div>
+        <div class="column-content-wrapper"><div class="column-content"></div></div>
+      </div>
+      <div class="column" id="col-1">
+        <div class="column-header">Terça</div>
+        <div class="column-content-wrapper"><div class="column-content"></div></div>
+      </div>
+      <div class="column" id="col-2">
+        <div class="column-header">Quarta</div>
+        <div class="column-content-wrapper"><div class="column-content"></div></div>
+      </div>
+      <div class="column" id="col-3">
+        <div class="column-header">Quinta</div>
+        <div class="column-content-wrapper"><div class="column-content"></div></div>
+      </div>
+      <div class="column" id="col-4">
+        <div class="column-header">Sexta</div>
+        <div class="column-content-wrapper"><div class="column-content"></div></div>
+      </div>
+      <div class="column" id="col-5">
+        <div class="column-header">Sábado</div>
+        <div class="column-content-wrapper"><div class="column-content"></div></div>
+      </div>
+
+    </div>
+    </div><!-- #time-table-scroll -->
+
+    <!-- ── Combination bar ── -->
+    <div id="combination-controller">
+      <button id="comb-prev" class="comb-paddle" title="Combinação anterior" disabled>&#8249;</button>
+      <div id="comb-track"></div>
+      <button id="comb-next" class="comb-paddle" title="Próxima combinação" disabled>&#8250;</button>
+      <span id="comb-count">0 combinações</span>
+    </div>
+  </div>
+
+  <!-- ── Explorer ── -->
+  <div id="lecture-explorer">
+
+    <div id="search-and-add">
+      <input
+        type="search"
+        id="search"
+        placeholder="Buscar disciplina (ex: MAC0110)"
+        autocomplete="off"
+        spellcheck="false"
+      />
+      <div id="search-result-box" hidden>
+        <ul id="search-results"></ul>
+      </div>
+    </div>
+
+    <div id="accordion-window">
+      <div id="accordion">
+        <p id="accordion-empty">Nenhuma disciplina selecionada.<br>Busque acima para adicionar.</p>
+      </div>
+    </div>
+    <div id="explorer-footer" hidden></div>
+
+  </div>
+</div>
+
+<script type="module" src="js/app.js"></script>
+</body>
+</html>

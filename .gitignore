@@ -1,0 +1,5 @@
+node_modules/
+/data/
+scraper/output/
+.claude/
+*.log

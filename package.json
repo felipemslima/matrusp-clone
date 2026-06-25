@@ -1,0 +1,20 @@
+{
+  "name": "matrusp-clone",
+  "version": "0.1.0",
+  "description": "Montador de grade USP — clone do MatrUSP",
+  "type": "module",
+  "scripts": {
+    "scrape": "node scraper/scrape.js",
+    "add-credits": "node scraper/add-credits.mjs",
+    "serve": "npx serve public -p 3000",
+    "test": "node --experimental-vm-modules tests/e2e.test.js"
+  },
+  "dependencies": {
+    "axios": "^1.7.2",
+    "cheerio": "^1.0.0"
+  },
+  "devDependencies": {
+    "puppeteer": "^22.0.0",
+    "serve": "^14.2.3"
+  }
+}
